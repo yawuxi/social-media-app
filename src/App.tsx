@@ -1,11 +1,3 @@
-import { Counter } from "features/Counter/components/Counter";
-
-const App = () => {
-  return (
-    <div className="app">
-      <Counter />
-    </div>
-  );
+export const App = () => {
+  return <div>APP</div>;
 };
-
-export { App };
