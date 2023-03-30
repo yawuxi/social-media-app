@@ -1,39 +1,43 @@
 import { FC, useState } from "react";
-import { SubmitHandler, useForm } from "react-hook-form";
-import { Button } from "components/Button";
-import { Input } from "components";
+import { SignUp } from "../../components/SignUp";
+import { SignIn } from "../../components/SignIn";
 import styles from "./index.module.scss";
 
-type Inputs = {
-  email: string;
-  password: string;
-};
-
 export const AuthPage: FC = () => {
-  const [isRegistration, setIsRegistration] = useState(false);
-  const { register, handleSubmit } = useForm<Inputs>();
+  const [isRegistration, setIsRegistration] = useState(true);
 
-  const submitButtonText = isRegistration ? "Registration" : "Login";
+  const userText = !isRegistration ? "Sign Up" : "Sign In";
+  const userQuestionText = isRegistration
+    ? "Already have an account?"
+    : "Have no account?";
 
   const toggleRegistration = () => {
     setIsRegistration((prevState) => !prevState);
   };
 
-  const onSubmit: SubmitHandler<Inputs> = (values) => {
-    console.log(values);
+  const submitFunction = (values: any) => {
+    for (const value in values) {
+      if (value === "sex") {
+        console.log("sign up", values);
+        return;
+      }
+    }
+
+    console.log("sign in", values);
   };
 
   return (
     <div className={styles.page}>
-      <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
-        <Input type="text" {...register("email")} />
-        <Input type="password" {...register("password")} />
-        <Button type="submit">{submitButtonText}</Button>
-      </form>
-      <p>
-        Already have an account?{" "}
-        <span onClick={toggleRegistration}>Login!</span>
-      </p>
+      <div className={styles.content}>
+        {isRegistration ? (
+          <SignUp submitFunction={submitFunction} />
+        ) : (
+          <SignIn submitFunction={submitFunction} />
+        )}
+        <p className={styles.question}>
+          {userQuestionText} <span onClick={toggleRegistration}>{userText}</span>
+        </p>
+      </div>
     </div>
   );
 };

@@ -7,8 +7,19 @@
   height: 100%;
 }
 
-.form {
+.content {
+  background-color: var(--light-gray);
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+}
+
+.question {
   display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
+  justify-content: center;
+  gap: .5rem;
+
+  span {
+    cursor: pointer;
+    color: var(--accent-color);
+  }
 }

@@ -1,6 +1,18 @@
 @import "scss/variables.module";
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+:global(.formError) {
+  color: var(--error);
+}
+
 .app {
   width: 100vw;
   height: 100vh;
+  background-color: var(--background);
 }

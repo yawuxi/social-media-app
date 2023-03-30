@@ -1,3 +1,27 @@
 .button {
+  padding: 1rem;
+  color: var(--text-color);
+  border-radius: var(--border-radius);
+  border: none;
+  cursor: pointer;
+}
+
+.bgAccent {
   background-color: var(--accent-color);
+}
+
+.bgWhite {
+  background-color: var(--background);
+}
+
+.bgLightGray {
+  background-color: var(--light-gray);
+}
+
+.textMain {
+  color: var(--text-color);
+}
+
+.textWhite {
+  color: var(--text-white);
 }

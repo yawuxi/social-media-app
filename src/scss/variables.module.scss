@@ -1,3 +1,17 @@
 :root {
+  --background: #FFFFFF;
   --accent-color: #377DFF;
+  --light-gray: #f3f3f6;
+  --dark-gray: #4E5D78;
+  --green: #38CB89;
+  --attention: #FF5630;
+  --border-radius: 10px;
+  --border-color: #B8BEC9;
+  --text-color: #959EAE;
+  --text-white: #FFFFFF;
+  --error: #BA4831;
+}
+
+[data-theme="dark"] {
+  --background: #191C21;
 }
