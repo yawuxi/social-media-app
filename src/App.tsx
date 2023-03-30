@@ -1,3 +1,10 @@
+import { AppRouter } from "./AppRouter";
+import styles from "./index.module.scss";
+
 export const App = () => {
-  return <div>APP</div>;
+  return (
+    <div className={styles.app}>
+      <AppRouter />
+    </div>
+  );
 };
